@@ -101,3 +101,21 @@ With platform-specific installers for Git, GitHub also provides the ease of stay
     - **logs/** : Ignore logs directory
     - ***.notes** : Ignore files with .notes extension
     - **pattern_/** : Ignore directories with pattern prefix
+
+
+### Share & Update (⭐ New)
+```base
+git branch -m <oldname> <newname> # Rename branch locally
+git branch -m <newname> # Rename current branch locally
+git push origin :<oldname> <newname> # Delete the old branch
+git push origin -u <newname> # Push the new branch, set local branch to track the new remote
+
+git push origin --delete <branchName> # Delete a remote branch
+git push origin :<branchName> # Delete a remote branch
+
+git push origin <branchName> # Push a branch to remote repository
+git push --all origin # Push all branches to your remote repository
+
+git push -u origin <branchName> # Push changes to remote repository (and remember the branch)
+git push origin <branchName> # Push changes to remote repository (remembered branch)
+```
