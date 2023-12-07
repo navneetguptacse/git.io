@@ -103,7 +103,7 @@ With platform-specific installers for Git, GitHub also provides the ease of stay
     - **pattern_/** : Ignore directories with pattern prefix
 
 
-### Share & Update (⭐ New)
+### ⭐ New & Update
 
 - **git branch -m [oldname] [newname]** : Rename branch locally
 - **git branch -m [newname]** : Rename current branch locally
