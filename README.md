@@ -105,7 +105,7 @@ With platform-specific installers for Git, GitHub also provides the ease of stay
     - `pattern_/` : Ignore directories with pattern prefix
 
 
-### ⭐ News & Update
+### `NEW` News & Update
 
 - `git branch -m <oldname> <newname>` : Rename branch locally
 - `git branch -m <newname>` : Rename current branch locally
