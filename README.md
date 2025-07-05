@@ -122,17 +122,17 @@ With platform-specific installers for Git, GitHub also provides the ease of stay
 
 - Create a new repository on the command line
   ```bash
-  echo "# hello" >> README.md
+  echo "# <repo_name>" >> README.md
   git init
   git add README.md
   git commit -m "first commit"
   git branch -M main
-  git remote add origin https://github.com/navneetguptacse/hello.git
+  git remote add origin https://github.com/navneetguptacse/<repo_name>.git
   git push -u origin main
   ```
 - Push an existing repository from the command line
   ```bash
-  git remote add origin https://github.com/navneetguptacse/hello.git
+  git remote add origin https://github.com/navneetguptacse/<repo_name>.git
   git branch -M main
   git push -u origin main
   ```
