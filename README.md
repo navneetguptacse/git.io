@@ -118,7 +118,7 @@ With platform-specific installers for Git, GitHub also provides the ease of stay
 - `git push -u origin <branchName>` : Push changes to remote repository (and remember the branch)
 - `git push origin <branchName>` : Push changes to remote repository (remembered branch)
 
-### `Defaults`
+### Defaults
 
 - Create a new repository on the command line
   ```bash
