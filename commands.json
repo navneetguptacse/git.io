@@ -1,0 +1,779 @@
+{
+  "recipes": [
+    {
+      "title": "Create Feature Branch",
+      "query": "switch -c",
+      "icon": "branch"
+    },
+    {
+      "title": "Undo Last Commit",
+      "query": "reset --soft",
+      "icon": "undo"
+    },
+    {
+      "title": "Stash Temporary Changes",
+      "query": "stash",
+      "icon": "stash"
+    },
+    {
+      "title": "Sync Remote Branch",
+      "query": "pull",
+      "icon": "remote"
+    },
+    {
+      "title": "Interactive Rebase",
+      "query": "rebase -i",
+      "icon": "merge"
+    },
+    {
+      "title": "Discard Uncommitted Edits",
+      "query": "restore",
+      "icon": "clean"
+    },
+    {
+      "title": "Cherry-Pick Commit",
+      "query": "cherry-pick",
+      "icon": "advanced"
+    }
+  ],
+  "groups": [
+    {
+      "id": "all",
+      "title": "All Commands",
+      "icon": "all"
+    },
+    {
+      "id": "must-remember",
+      "title": "Must Remember",
+      "icon": "mustRemember"
+    },
+    {
+      "id": "favs",
+      "title": "Bookmarks",
+      "icon": "starFilled"
+    },
+    {
+      "id": "group-getting-started",
+      "title": "Getting Started",
+      "icon": "init"
+    },
+    {
+      "id": "group-daily",
+      "title": "Daily Core",
+      "icon": "commit"
+    },
+    {
+      "id": "group-remote",
+      "title": "Remote & Sync",
+      "icon": "remote"
+    },
+    {
+      "id": "group-undo",
+      "title": "Undo & Stash",
+      "icon": "undo"
+    },
+    {
+      "id": "group-advanced",
+      "title": "Advanced & Tools",
+      "icon": "advanced"
+    }
+  ],
+  "sections": [
+    {
+      "id": "1",
+      "title": "Setup & Config",
+      "group": "group-getting-started",
+      "icon": "config",
+      "commands": [
+        {
+          "code": "git config --global user.name \"Your Name\"",
+          "comment": "Set your Git username",
+          "tags": [
+            "config",
+            "username"
+          ]
+        },
+        {
+          "code": "git config --global user.email \"you@email.com\"",
+          "comment": "Set your Git email",
+          "tags": [
+            "config",
+            "email"
+          ]
+        },
+        {
+          "code": "git config --list",
+          "comment": "Show all active Git configs",
+          "tags": [
+            "config",
+            "list"
+          ]
+        },
+        {
+          "code": "git config --global core.editor \"code --wait\"",
+          "comment": "Set default text editor",
+          "tags": [
+            "config",
+            "editor"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "title": "Initialize & Clone",
+      "group": "group-getting-started",
+      "icon": "init",
+      "commands": [
+        {
+          "code": "git init",
+          "comment": "Initialize a new local Git repository",
+          "tags": [
+            "init",
+            "repo"
+          ]
+        },
+        {
+          "code": "git clone <repo-url>",
+          "comment": "Clone a remote repository",
+          "tags": [
+            "clone",
+            "download"
+          ]
+        },
+        {
+          "code": "git clone -b <branch> <url>",
+          "comment": "Clone a specific branch directly",
+          "tags": [
+            "clone",
+            "branch"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "title": "Check Status & Info",
+      "group": "group-daily",
+      "icon": "status",
+      "commands": [
+        {
+          "code": "git status",
+          "comment": "Show current working directory status",
+          "tags": [
+            "status",
+            "changes"
+          ]
+        },
+        {
+          "code": "git log",
+          "comment": "Show full commit history",
+          "tags": [
+            "log",
+            "history"
+          ]
+        },
+        {
+          "code": "git log --oneline",
+          "comment": "Show compact single-line commit log",
+          "tags": [
+            "log",
+            "compact"
+          ]
+        },
+        {
+          "code": "git log --graph --oneline",
+          "comment": "Display visual commit branch graph",
+          "tags": [
+            "log",
+            "graph"
+          ]
+        },
+        {
+          "code": "git show <commit-id>",
+          "comment": "Show commit details and diff",
+          "tags": [
+            "show",
+            "commit"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "title": "Staging & Commit",
+      "group": "group-daily",
+      "icon": "commit",
+      "commands": [
+        {
+          "code": "git add <file>",
+          "comment": "Stage a specific file for commit",
+          "tags": [
+            "add",
+            "stage"
+          ]
+        },
+        {
+          "code": "git add .",
+          "comment": "Stage all current changes",
+          "tags": [
+            "add",
+            "all"
+          ]
+        },
+        {
+          "code": "git commit -m \"message\"",
+          "comment": "Commit staged changes with message",
+          "tags": [
+            "commit",
+            "message"
+          ]
+        },
+        {
+          "code": "git commit -am \"message\"",
+          "comment": "Stage modified files + commit",
+          "tags": [
+            "commit",
+            "auto-stage"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "title": "Compare Changes",
+      "group": "group-daily",
+      "icon": "diff",
+      "commands": [
+        {
+          "code": "git diff",
+          "comment": "Show unstaged working tree changes",
+          "tags": [
+            "diff",
+            "unstaged"
+          ]
+        },
+        {
+          "code": "git diff --staged",
+          "comment": "Show staged changes ready for commit",
+          "tags": [
+            "diff",
+            "staged"
+          ]
+        },
+        {
+          "code": "git diff <branch1>..<branch2>",
+          "comment": "Compare differences between two branches",
+          "tags": [
+            "diff",
+            "compare"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "title": "Branching",
+      "group": "group-daily",
+      "icon": "branch",
+      "commands": [
+        {
+          "code": "git branch",
+          "comment": "List all local branches",
+          "tags": [
+            "branch",
+            "list"
+          ]
+        },
+        {
+          "code": "git branch <name>",
+          "comment": "Create a new local branch",
+          "tags": [
+            "branch",
+            "create"
+          ]
+        },
+        {
+          "code": "git switch <branch>",
+          "comment": "Switch active branch",
+          "tags": [
+            "switch",
+            "checkout"
+          ]
+        },
+        {
+          "code": "git switch -c <name>",
+          "comment": "Create and switch to new branch",
+          "tags": [
+            "switch",
+            "create"
+          ]
+        },
+        {
+          "code": "git checkout <branch>",
+          "comment": "Switch branch (legacy syntax)",
+          "tags": [
+            "checkout",
+            "legacy"
+          ]
+        },
+        {
+          "code": "git checkout -b <name>",
+          "comment": "Create & switch branch (legacy)",
+          "tags": [
+            "checkout",
+            "legacy"
+          ]
+        },
+        {
+          "code": "git branch --merged",
+          "comment": "Show branches already merged into current",
+          "tags": [
+            "branch",
+            "merged"
+          ]
+        },
+        {
+          "code": "git branch --no-merged",
+          "comment": "Show unmerged branches",
+          "tags": [
+            "branch",
+            "unmerged"
+          ]
+        },
+        {
+          "code": "git branch -d <branch>",
+          "comment": "Safely delete a merged branch",
+          "tags": [
+            "branch",
+            "delete"
+          ]
+        },
+        {
+          "code": "git branch -D <branch>",
+          "comment": "Force delete an unmerged branch",
+          "tags": [
+            "branch",
+            "force-delete"
+          ]
+        },
+        {
+          "code": "git push origin --delete <branch>",
+          "comment": "Delete branch from remote server",
+          "tags": [
+            "push",
+            "remote-delete"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "title": "Merge & Rebase",
+      "group": "group-daily",
+      "icon": "merge",
+      "commands": [
+        {
+          "code": "git merge <branch>",
+          "comment": "Merge target branch into current branch",
+          "tags": [
+            "merge",
+            "combine"
+          ]
+        },
+        {
+          "code": "git rebase <branch>",
+          "comment": "Reapply commits on top of target branch",
+          "tags": [
+            "rebase",
+            "clean-history"
+          ]
+        },
+        {
+          "code": "git rebase -i HEAD~3",
+          "comment": "Interactively edit/squash last 3 commits",
+          "tags": [
+            "rebase",
+            "interactive"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "title": "Remote (GitHub / Remote)",
+      "group": "group-remote",
+      "icon": "remote",
+      "commands": [
+        {
+          "code": "git remote",
+          "comment": "List remote repository connection names",
+          "tags": [
+            "remote",
+            "list"
+          ]
+        },
+        {
+          "code": "git remote -v",
+          "comment": "Show remote names with read/write URLs",
+          "tags": [
+            "remote",
+            "verbose"
+          ]
+        },
+        {
+          "code": "git remote add origin <url>",
+          "comment": "Connect local repo to remote URL",
+          "tags": [
+            "remote",
+            "add"
+          ]
+        },
+        {
+          "code": "git remote remove origin",
+          "comment": "Remove remote repo connection",
+          "tags": [
+            "remote",
+            "remove"
+          ]
+        },
+        {
+          "code": "git remote rename old new",
+          "comment": "Rename remote connection",
+          "tags": [
+            "remote",
+            "rename"
+          ]
+        },
+        {
+          "code": "git remote set-url origin <url>",
+          "comment": "Change URL for remote connection",
+          "tags": [
+            "remote",
+            "url"
+          ]
+        },
+        {
+          "code": "git remote set-url --add origin <url>",
+          "comment": "Add secondary push URL to remote",
+          "tags": [
+            "remote",
+            "multi-url"
+          ]
+        },
+        {
+          "code": "git remote set-url --delete origin <url>",
+          "comment": "Delete specific URL from remote",
+          "tags": [
+            "remote",
+            "delete-url"
+          ]
+        },
+        {
+          "code": "git fetch",
+          "comment": "Fetch latest remote history without merging",
+          "tags": [
+            "fetch",
+            "sync"
+          ]
+        },
+        {
+          "code": "git fetch origin",
+          "comment": "Fetch changes from specific remote",
+          "tags": [
+            "fetch",
+            "origin"
+          ]
+        },
+        {
+          "code": "git fetch --all",
+          "comment": "Fetch all registered remotes",
+          "tags": [
+            "fetch",
+            "all"
+          ]
+        },
+        {
+          "code": "git pull origin main",
+          "comment": "Fetch + merge changes from remote branch",
+          "tags": [
+            "pull",
+            "sync"
+          ]
+        },
+        {
+          "code": "git push origin main",
+          "comment": "Push local commits to remote branch",
+          "tags": [
+            "push",
+            "upload"
+          ]
+        },
+        {
+          "code": "git push -u origin main",
+          "comment": "Push & configure default upstream branch",
+          "tags": [
+            "push",
+            "upstream"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "title": "Undo & Reset",
+      "group": "group-undo",
+      "icon": "undo",
+      "commands": [
+        {
+          "code": "git restore <file>",
+          "comment": "Discard working tree changes in file",
+          "tags": [
+            "restore",
+            "discard"
+          ]
+        },
+        {
+          "code": "git restore --staged <file>",
+          "comment": "Unstage file while preserving local edits",
+          "tags": [
+            "restore",
+            "unstage"
+          ]
+        },
+        {
+          "code": "git reset HEAD <file>",
+          "comment": "Unstage file (legacy method)",
+          "tags": [
+            "reset",
+            "unstage"
+          ]
+        },
+        {
+          "code": "git reset --soft HEAD~1",
+          "comment": "Undo commit; keep changes staged",
+          "tags": [
+            "reset",
+            "soft"
+          ]
+        },
+        {
+          "code": "git reset --hard HEAD",
+          "comment": "Dangerously reset commit and local edits",
+          "tags": [
+            "reset",
+            "hard"
+          ]
+        },
+        {
+          "code": "git revert <commit-id>",
+          "comment": "Safely revert commit by creating inverse commit",
+          "tags": [
+            "revert",
+            "safe"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "title": "Stash (Temporary Save)",
+      "group": "group-undo",
+      "icon": "stash",
+      "commands": [
+        {
+          "code": "git stash",
+          "comment": "Temporarily stash dirty working tree changes",
+          "tags": [
+            "stash",
+            "save"
+          ]
+        },
+        {
+          "code": "git stash list",
+          "comment": "List all saved stashes",
+          "tags": [
+            "stash",
+            "list"
+          ]
+        },
+        {
+          "code": "git stash apply",
+          "comment": "Reapply stashed changes without deleting stash",
+          "tags": [
+            "stash",
+            "apply"
+          ]
+        },
+        {
+          "code": "git stash pop",
+          "comment": "Apply and remove latest stash",
+          "tags": [
+            "stash",
+            "pop"
+          ]
+        },
+        {
+          "code": "git stash drop",
+          "comment": "Delete specific stash item",
+          "tags": [
+            "stash",
+            "drop"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "11",
+      "title": "Tags",
+      "group": "group-advanced",
+      "icon": "tags",
+      "commands": [
+        {
+          "code": "git tag",
+          "comment": "List all repository tags",
+          "tags": [
+            "tag",
+            "list"
+          ]
+        },
+        {
+          "code": "git tag v1.0",
+          "comment": "Create lightweight tag at HEAD",
+          "tags": [
+            "tag",
+            "create"
+          ]
+        },
+        {
+          "code": "git tag -a v1.0 -m \"msg\"",
+          "comment": "Create annotated tag with description",
+          "tags": [
+            "tag",
+            "annotated"
+          ]
+        },
+        {
+          "code": "git push origin v1.0",
+          "comment": "Push tag to remote repository",
+          "tags": [
+            "push",
+            "tag"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "12",
+      "title": "Search & Inspect",
+      "group": "group-advanced",
+      "icon": "search",
+      "commands": [
+        {
+          "code": "git grep \"text\"",
+          "comment": "Search text pattern across tracked files",
+          "tags": [
+            "grep",
+            "search"
+          ]
+        },
+        {
+          "code": "git log --grep=\"msg\"",
+          "comment": "Search commit messages by string pattern",
+          "tags": [
+            "log",
+            "grep"
+          ]
+        },
+        {
+          "code": "git blame <file>",
+          "comment": "Show author and commit per file line",
+          "tags": [
+            "blame",
+            "author"
+          ]
+        },
+        {
+          "code": "git reflog",
+          "comment": "Show local HEAD movement history log",
+          "tags": [
+            "reflog",
+            "history"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "13",
+      "title": "Advanced",
+      "group": "group-advanced",
+      "icon": "advanced",
+      "commands": [
+        {
+          "code": "git cherry-pick <commit-id>",
+          "comment": "Apply commit from another branch to current",
+          "tags": [
+            "cherry-pick",
+            "apply"
+          ]
+        },
+        {
+          "code": "git bisect",
+          "comment": "Binary search commit history to find bug root cause",
+          "tags": [
+            "bisect",
+            "debug"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "14",
+      "title": "Clean Up",
+      "group": "group-undo",
+      "icon": "clean",
+      "commands": [
+        {
+          "code": "git clean -f",
+          "comment": "Force remove untracked files",
+          "tags": [
+            "clean",
+            "remove"
+          ]
+        },
+        {
+          "code": "git clean -fd",
+          "comment": "Remove untracked files & directories",
+          "tags": [
+            "clean",
+            "directories"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "15",
+      "title": "Submodules",
+      "group": "group-advanced",
+      "icon": "submodules",
+      "commands": [
+        {
+          "code": "git submodule add <repo>",
+          "comment": "Add external repo as submodule",
+          "tags": [
+            "submodule",
+            "add"
+          ]
+        },
+        {
+          "code": "git submodule update --init --recursive",
+          "comment": "Initialize and sync submodules",
+          "tags": [
+            "submodule",
+            "update"
+          ]
+        }
+      ]
+    }
+  ]
+}

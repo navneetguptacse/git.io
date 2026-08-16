@@ -1,169 +1,53 @@
-## Git & Github (Git Commands)
+# Git.io — Git & GitHub Commands Cheatsheet
 
-### 1. Setup & Config
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](index.html)
+[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](styles.css)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](index.html)
+[![Git Theme](https://img.shields.io/badge/Theme-Git%20Orange%20%23F05032-F05032?style=for-the-badge&logo=git&logoColor=white)](commands.json)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-22c55e?style=for-the-badge&logo=github&logoColor=white)](https://navneetguptacse.github.io/git.io/)
+[![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
 
-```bash
-git config --global user.name "Your Name"        # Set your Git username
-git config --global user.email "you@email.com"   # Set your Git email
-git config --list                                # Show all Git configs
-git config --global core.editor "code --wait"    # Set default editor
-```
+An interactive Git and GitHub cheatsheet web application styled with the official Git brand color theme, sharp corners, instant search, dynamic JSON data, and 1-click command copying.
 
-### 2. Initialize & Clone
+## Features
 
-```bash
-git init                      # Initialize a new Git repository
-git clone <repo-url>          # Clone a remote repository
-git clone -b <branch> <url>   # Clone a specific branch
-```
+- **Git Brand Theme**: Signature Git Orange (`#F05032`), dark and light modes, and 100% sharp corners.
+- **Dynamic JSON Data**: Powered by `commands.json` with 70+ Git commands organized into 15 categories.
+- **Workflow Navigation**: Filter by workflow groups or jump directly to any section.
+- **Instant Search**: Search commands, flags, descriptions, and tags using the `/` shortcut.
+- **Cards & Table Views**: Toggle between card grid and compact table layouts.
+- **Bookmarks & Generator**: Save favorite commands locally and build custom Git commands interactively.
 
-### 3. Check Status & Info
+## Quick Start
 
-```bash
-git status                    # Show current changes (staged/unstaged)
-git log                       # Show full commit history
-git log --oneline             # Show compact commit history
-git log --graph --oneline     # Visual commit graph
-git show <commit-id>          # Show details of a commit
-```
-
-### 4. Staging & Commit
+Open `index.html` in your browser or run a local HTTP server:
 
 ```bash
-git add <file>                # Stage a specific file
-git add .                     # Stage all changes
-git commit -m "message"       # Commit staged changes
-git commit -am "message"      # Stage + commit (equivalent to: git add -u && git commit)
+python3 -m http.server 8000
 ```
 
-### 5. Compare Changes
+Access the application at `http://localhost:8000`.
 
-```bash
-git diff                      # Show unstaged changes
-git diff --staged             # Show staged changes
-git diff <branch1>..<branch2> # Compare two branches
-```
+## Categories Covered
 
-### 6. Branching
+| #   | Category            | Core Focus                                 |
+| --- | ------------------- | ------------------------------------------ |
+| 1   | Setup & Config      | User credentials & Git settings            |
+| 2   | Initialize & Clone  | Local repos & remote cloning               |
+| 3   | Check Status & Info | Repository status, log history & diff view |
+| 4   | Staging & Commit    | Staging files & committing changes         |
+| 5   | Compare Changes     | Working tree & staged diffs                |
+| 6   | Branching           | Branch creation, switching & deletion      |
+| 7   | Merge & Rebase      | Branch merging & history rebasing          |
+| 8   | Remote & Sync       | Remote repo management, fetch, pull & push |
+| 9   | Undo & Reset        | Unstaging, soft/hard resets & reverts      |
+| 10  | Stash               | Saving & managing temporary working edits  |
+| 11  | Tags                | Tag creation & remote tag pushing          |
+| 12  | Search & Inspect    | Text search, blame & reflog audit          |
+| 13  | Advanced            | Cherry-picking & bisect debugging          |
+| 14  | Clean Up            | Removing untracked files & directories     |
+| 15  | Submodules          | Managing nested external repositories      |
 
-```bash
-git branch                         # List branches
-git branch <name>                  # Create new branch
-git switch <branch>                # Switch to branch
-git switch -c <name>               # Create + switch branch
-git checkout <branch>              # Old way to switch branch
-git checkout -b <name>             # Old way create + switch
-git branch --merged                # Show branches already merged into current branch
-git branch --no-merged             # Show branches NOT yet merged
-git branch -d <branch>             # Delete a local branch (safe: only if merged)
-git branch -D <branch>             # Force delete a local branch (even if not merged)
-git push origin --delete <branch>  # Delete a remote branch
-```
+## License
 
-### 7. Merge & Rebase
-
-```bash
-git merge <branch>            # Merge branch into current branch
-git rebase <branch>           # Reapply commits on top of another branch
-git rebase -i HEAD~3          # Interactive rebase (edit last 3 commits)
-```
-
-### 8. Remote (GitHub etc.)
-
-```bash
-git remote                    # List remote names
-git remote -v                 # Show remote URLs
-git remote add origin <url>   # Add remote repository
-git remote remove origin      # Remove remote
-git remote rename old new     # Rename remote
-
-git remote set-url origin <url>          # Change remote URL
-git remote set-url --add origin <url>    # Add another URL to remote
-git remote set-url --delete origin <url> # Remove specific URL
-
-git fetch                     # Fetch changes from remote
-git fetch origin              # Fetch from specific remote
-git fetch --all               # Fetch all remotes
-
-git pull origin main          # Fetch + merge from remote branch
-git push origin main          # Push to remote branch
-git push -u origin main       # Push and set upstream
-```
-
-### 9. Undo & Reset
-
-```bash
-git restore <file>            # Discard changes in file
-git restore --staged <file>   # Unstage file
-
-git reset HEAD <file>         # Unstage file (older way)
-git reset --soft HEAD~1       # Undo commit (keep changes)
-git reset --hard HEAD         # Reset everything (danger) | Undo commit (remove changes)
-
-git revert <commit-id>        # Undo commit safely (creates new commit)
-```
-
-### 10. Stash (Temporary Save)
-
-```bash
-git stash                     # Save changes temporarily
-git stash list                # List stashes
-git stash apply               # Apply stash
-git stash pop                 # Apply + remove stash
-git stash drop                # Delete stash
-```
-
-### 11. Tags
-
-```bash
-git tag                       # List tags
-git tag v1.0                  # Create lightweight tag
-git tag -a v1.0 -m "msg"      # Create annotated tag
-git push origin v1.0          # Push tag
-```
-
-### 12. Search & Inspect
-
-```bash
-git grep "text"               # Search text in repo
-git log --grep="msg"          # Search commit messages
-git blame <file>              # Show who changed each line
-git reflog                    # Show all HEAD movements
-```
-
-### 13. Advanced
-
-```bash
-git cherry-pick <commit-id>   # Apply commit from another branch
-git bisect                    # Find buggy commit
-```
-
-### 14. Clean Up
-
-```bash
-git clean -f                  # Remove untracked files
-git clean -fd                 # Remove files + directories
-```
-
-### 15. Submodules
-
-```bash
-git submodule add <repo>                # Add submodule
-git submodule update --init --recursive # Initialize submodules
-```
-
-## MOST IMPORTANT (Must Remember)
-
-If you remember just these, you’re become productive:
-
-```bash
-git clone <url>               # Get repo
-git status                    # Check changes
-git add .                     # Stage changes
-git commit -m "msg"           # Save changes
-git pull                      # Get latest updates
-git push                      # Upload changes
-git switch -c feature         # New branch
-git merge feature             # Merge branch
-git log --oneline             # View history
-```
+Distributed under the [MIT License](LICENSE). See `LICENSE` for more details.
